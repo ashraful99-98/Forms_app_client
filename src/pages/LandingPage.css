@@ -1,0 +1,74 @@
+/* AppBar styling */
+.appBar {
+    background-color: teal !important;
+  }
+  
+  .iconMargin {
+    margin-right: 8px;
+  }
+  
+  .title {
+    flex-grow: 1;
+  }
+  
+  /* Hero section */
+  .heroSection {
+    position: relative;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 32px;
+    background-image: url("https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .hiddenImage {
+    display: none;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .heroText {
+    position: relative;
+    padding: 24px;
+    padding-right: 0;
+  }
+  
+  .heroButtons {
+    margin-top: 16px;
+  }
+  
+  .tealButton {
+    background-color: teal !important;
+    color: #fff !important;
+    margin-right: 12px;
+  }
+  
+  .tealText {
+    color: teal;
+  }
+  
+  /* Card section */
+  .cardFlex {
+    display: flex;
+  }
+  
+  .cardImage {
+    width: 160px;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #dae0e2;
+    padding: 16px;
+    margin-top: 40px;
+  }
+  
