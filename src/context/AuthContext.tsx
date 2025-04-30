@@ -9,7 +9,7 @@ import axios from "axios";
 
 interface User {
   isBlocked: any;
-  _id: string;
+  id: string;
   name: string;
   email: string;
   role: string;
