@@ -34,9 +34,9 @@ const Register: React.FC = () => {
       return;
     }
     try {
-      // const res = await axios.post("http://localhost:8000/api/auth/register",
+      // const res = await axios.post("http://localhost:8000/api/auth/register", {
       const res = await axios.post(
-        "https://forms-app-47.vercel.app/api/auth/register",
+        "https://form-app-server-4-7.onrender.com/api/auth/register",
         {
           name,
           email,

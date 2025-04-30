@@ -7,8 +7,7 @@ import React, {
 } from "react";
 import axios from "axios";
 
-// const API_URL = "http://localhost:8000/api/forms/";
-const API_URL = "https://forms-app-47.vercel.app/api/forms/";
+const API_URL = "https://form-app-server-4-7.onrender.com/api/forms/";
 
 export interface FormType {
   // _id?: string;

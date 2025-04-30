@@ -54,7 +54,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       const response = await axios.post(
         // "http://localhost:8000/api/auth/login",
-        "https://forms-app-47.vercel.app/api/auth/login",
+        "https://form-app-server-4-7.onrender.com/api/auth/login",
         { email, password },
         { withCredentials: true }
       );
@@ -69,7 +69,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       // const response = await axios.get("http://localhost:8000/api/users/me", {
       const response = await axios.get(
-        "https://forms-app-47.vercel.app/api/users/me",
+        "https://form-app-server-4-7.onrender.com/api/users/me",
         {
           withCredentials: true,
         }
@@ -85,7 +85,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       await axios.post(
         // "http://localhost:8000/api/auth/logout",
-        "https://forms-app-47.vercel.app/api/auth/logout",
+        "https://form-app-server-4-7.onrender.com/api/auth/logout",
         {},
         { withCredentials: true }
       );
@@ -99,7 +99,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       // const response = await axios.get("http://localhost:8000/api/users", {
       const response = await axios.get(
-        "https://forms-app-47.vercel.app/api/users",
+        "https://form-app-server-4-7.onrender.com/api/users",
         {
           withCredentials: true,
         }
@@ -114,7 +114,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       await axios.put(
         // "http://localhost:8000/api/users/updateRole",
-        "https://forms-app-47.vercel.app/api/users/updateRole",
+        "https://form-app-server-4-7.onrender.com/api/users/updateRole",
         { id, role },
         { withCredentials: true }
       );
@@ -128,7 +128,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       await axios.patch(
         // `http://localhost:8000/api/users/block/${id}`,
-        `https://forms-app-47.vercel.app/api/users/block/${id}`,
+        `https://form-app-server-4-7.onrender.com/api/users/block/${id}`,
         {},
         { withCredentials: true }
       );
@@ -142,7 +142,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     try {
       await axios.patch(
         // `http://localhost:8000/api/users/unblock/${id}`,
-        `https://forms-app-47.vercel.app/api/users/unblock/${id}`,
+        `https://form-app-server-4-7.onrender.com/api/users/unblock/${id}`,
         {},
         { withCredentials: true }
       );
@@ -154,10 +154,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const deleteUser = async (id: string) => {
     try {
-      // await axios.delete(`http://localhost:8000/api/users/${id}`, {
-      await axios.delete(`https://forms-app-47.vercel.app/api/users/${id}`, {
-        withCredentials: true,
-      });
+      await axios.delete(
+        `https://form-app-server-4-7.onrender.com/api/users/${id}`,
+        {
+          withCredentials: true,
+        }
+      );
       fetchAllUsers();
     } catch (error) {
       console.error("Error deleting user:", error);
@@ -168,8 +170,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const blockUsers = async (userIds: string[]) => {
     try {
       await axios.patch(
-        // "http://localhost:8000/api/users/block",
-        "https://forms-app-47.vercel.app/api/users/block",
+        "https://form-app-server-4-7.onrender.com/api/users/block",
         { userIds },
         { withCredentials: true }
       );
@@ -182,8 +183,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const unblockUsers = async (userIds: string[]) => {
     try {
       await axios.patch(
-        // "http://localhost:8000/api/users/unblock",
-        "https://forms-app-47.vercel.app/api/users/unblock",
+        "https://form-app-server-4-7.onrender.com/api/users/unblock",
         { userIds },
         { withCredentials: true }
       );
@@ -195,8 +195,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const deleteUsers = async (userIds: string[]) => {
     try {
-      // await axios.delete("http://localhost:8000/api/users", {
-      await axios.delete("https://forms-app-47.vercel.app/api/users", {
+      await axios.delete("https://form-app-server-4-7.onrender.com/api/users", {
         data: { userIds },
         withCredentials: true,
       });

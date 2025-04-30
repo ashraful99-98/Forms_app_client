@@ -34,8 +34,7 @@ export const UploadProvider: React.FC<{ children: ReactNode }> = ({
 
     try {
       const res = await axios.post(
-        // "http://localhost:8000/api/images",
-        "https://forms-app-47.vercel.app/api/images",
+        "https://form-app-server-4-7.onrender.com/api/images",
         formData,
         {
           headers: {
@@ -63,9 +62,8 @@ export const UploadProvider: React.FC<{ children: ReactNode }> = ({
 
   const fetchUploadedImages = async () => {
     try {
-      // const res = await axios.get("http://localhost:8000/api/images", {
       const res = await axios.get(
-        "https://forms-app-47.vercel.app/api/images",
+        "https://form-app-server-4-7.onrender.com/api/images",
         {
           withCredentials: true,
         }

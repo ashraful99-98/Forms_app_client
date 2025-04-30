@@ -35,8 +35,7 @@ const AdminRegister: React.FC = () => {
     }
     try {
       const res = await axios.post(
-        // "http://localhost:8000/api/auth/admin/register",
-        "https://forms-app-47.vercel.app/api/auth/admin/register",
+        "https://form-app-server-4-7.onrender.com/api/auth/admin/register",
         {
           name,
           email,
