@@ -50,6 +50,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   // const [user, setUser] = useState<User | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [users, setUsers] = useState<User[]>([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const login = async (email: string, password: string) => {
     try {
@@ -75,11 +76,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           withCredentials: true,
         }
       );
-      // setUser(response.data.user._id);
       setUser(response.data.user);
+      setIsAuthenticated(true);
     } catch (error) {
       console.log("User not logged in:", error);
       setUser(null);
+      setIsAuthenticated(false);
     }
   };
 
