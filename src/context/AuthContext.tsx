@@ -9,7 +9,7 @@ import axios from "axios";
 
 interface User {
   isBlocked: any;
-  id: string;
+  _id: string;
   name: string;
   email: string;
   role: string;
@@ -47,6 +47,7 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  // const [user, setUser] = useState<User | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [users, setUsers] = useState<User[]>([]);
 
@@ -74,6 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           withCredentials: true,
         }
       );
+      // setUser(response.data.user._id);
       setUser(response.data.user);
     } catch (error) {
       console.log("User not logged in:", error);
@@ -155,6 +157,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const deleteUser = async (id: string) => {
     try {
       await axios.delete(
+        // `http://localhost:8000/api/users/${id}`,
         `https://form-app-server-4-7.onrender.com/api/users/${id}`,
         {
           withCredentials: true,
@@ -170,6 +173,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const blockUsers = async (userIds: string[]) => {
     try {
       await axios.patch(
+        // "http://localhost:8000/api/users/block",
         "https://form-app-server-4-7.onrender.com/api/users/block",
         { userIds },
         { withCredentials: true }
@@ -183,6 +187,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const unblockUsers = async (userIds: string[]) => {
     try {
       await axios.patch(
+        // "http://localhost:8000/api/users/unblock",
         "https://form-app-server-4-7.onrender.com/api/users/unblock",
         { userIds },
         { withCredentials: true }
@@ -195,6 +200,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const deleteUsers = async (userIds: string[]) => {
     try {
+      // await axios.delete("http://localhost:8000/api/users", {
       await axios.delete("https://form-app-server-4-7.onrender.com/api/users", {
         data: { userIds },
         withCredentials: true,

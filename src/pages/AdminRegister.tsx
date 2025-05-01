@@ -36,6 +36,7 @@ const AdminRegister: React.FC = () => {
     try {
       const res = await axios.post(
         "https://form-app-server-4-7.onrender.com/api/auth/admin/register",
+        // "http://localhost:8000/api/auth/admin/register",
         {
           name,
           email,
