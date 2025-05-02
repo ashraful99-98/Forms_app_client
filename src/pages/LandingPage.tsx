@@ -108,6 +108,7 @@ const LandingPage = () => {
           {features.map((feature, index) => (
             // <Grid item xs={12} sm={6} md={4} key={index}>
             <Box
+              key={index}
               sx={{
                 position: "relative",
                 backgroundImage: `url(${feature.backgroundImage})`,

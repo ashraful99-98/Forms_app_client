@@ -74,7 +74,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
+  const { user, logout, setUser } = useAuth();
   const { createForm, fetchUserForms } = useFormContext();
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
